@@ -1,0 +1,29 @@
+{
+  "name": "sas-file-uploader-mock",
+  "version": "1.0.0",
+  "description": "sas-file-uploader-mock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "mock",
+    "sas"
+  ],
+  "author": "SamSvet",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
+    "express": "^4.17.3",
+    "multer": "^1.4.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "kill-port": "^1.6.1",
+    "nodemon": "^2.0.15"
+  }
+}
