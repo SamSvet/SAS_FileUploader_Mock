@@ -1,5 +1,6 @@
+const { conditions } = require("../data/refbooks/conditions");
 const {createResponse, DELTA_ACTION} = require("../share/response");
-const {searchByRrefbooks} = require('../share/search-by-refbooks');
+const {searchByRrefbooks, searchOriginalRefBook} = require('../share/search-by-refbooks');
 
 const directoryGetValue = (id, ref_code, substring) => {
 
@@ -24,6 +25,13 @@ const respond = (req, resp) => {
     resp.json(responseBody);
 }
 
+const respond_get = (req, resp, refBook) => {
+    const data = { [refBook]: searchOriginalRefBook(refBook)};
+    const delta_action = DELTA_ACTION.OVERRIDE;
+    const responseBody = createResponse({data, delta_action});
+    resp.json(responseBody);
+}
+
 module.exports = {
-    respond
+    respond, respond_get,
 }

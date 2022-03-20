@@ -1,6 +1,6 @@
 const {createRefbookItem} = require("./refbook-item-structure");
 
-const process_rule = [
+const process_rules = [
     {
         process_cd: 'sashelp_shoes',
         rule_num: 1,
@@ -48,8 +48,8 @@ const process_rule = [
     },
 
 ];
-const PROCESS_RULES = process_rule.map(x => createRefbookItem(x));
+const PROCESS_RULES = process_rules.map(x => createRefbookItem(x));
 
 module.exports = {
-    PROCESS_RULES
+    PROCESS_RULES, process_rules
 };

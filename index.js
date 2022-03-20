@@ -20,8 +20,9 @@ app.use(express.json());
 app.use(multer().array("resource"));
 
 // app.post(SAS_API.path, (req, res) => SAS_API.respond(req, res));
-app.get('*', (req, res) => {
-  res.status(200).json(conditions)
+app.get(`${DICT_API.path}/:refBook`, (req, res) => {
+  DICT_API.respond(req, res)
+  // res.status(200).json(conditions)
 })
 app.use( (err, req, res, next) => {
   console.log(err.stack);

@@ -1,8 +1,8 @@
 const { REF_CODES } = require("../share/constants");
-const { CONDITIONS } = require("../data/refbooks/conditions");
-const { PROCESS_RULES } = require("../data/refbooks/process-rule");
-const { RULE_COLUMNS } = require("../data/refbooks/rule-column");
-const { TARGETS } = require("../data/refbooks/target");
+const { CONDITIONS, conditions } = require("../data/refbooks/conditions");
+const { PROCESS_RULES, process_rules } = require("../data/refbooks/process-rule");
+const { RULE_COLUMNS, rule_columns } = require("../data/refbooks/rule-column");
+const { TARGETS, targets } = require("../data/refbooks/target");
 
 const searchByRrefbooks = (ref_code, substring) => {
   let refbook;
@@ -36,6 +36,17 @@ const searchByRrefbooks = (ref_code, substring) => {
   return flatSearch();
 };
 
+const searchOriginalRefBook = (ref_code) => {
+  const originalIndex = {
+    [REF_CODES.CONDITION]: conditions,
+    [REF_CODES.PROCESS_RULE]: process_rules,
+    [REF_CODES.RULE_COLUMN]: rule_columns,
+    [REF_CODES.TARGET]: targets,
+  }
+
+  return originalIndex[ref_code] || {}
+}
+
 module.exports = {
-  searchByRrefbooks,
+  searchByRrefbooks, searchOriginalRefBook
 };

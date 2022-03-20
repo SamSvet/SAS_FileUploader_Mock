@@ -1,6 +1,6 @@
 const {createRefbookItem} = require("./refbook-item-structure")
 
-const target = [
+const targets = [
     {
         process_cd: 'sashelp_shoes',
         process_name: 'shoes list',
@@ -21,8 +21,8 @@ const target = [
     }
 ];
 
-const TARGETS = target.map(x => createRefbookItem(x));
+const TARGETS = targets.map(x => createRefbookItem(x));
 
 module.exports = {
-    TARGETS,
+    TARGETS, targets
 }

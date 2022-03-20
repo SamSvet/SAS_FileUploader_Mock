@@ -1,6 +1,6 @@
 const {createRefbookItem} = require("./refbook-item-structure");
 
-const rule_column = [
+const rule_columns = [
     {
         rule_num: 1,
         rule_column: 'Product',
@@ -39,8 +39,8 @@ const rule_column = [
     },
 ]
 
-const RULE_COLUMNS = rule_column.map(x => createRefbookItem(x));
+const RULE_COLUMNS = rule_columns.map(x => createRefbookItem(x));
 
 module.exports = {
-    RULE_COLUMNS
+    RULE_COLUMNS, rule_columns
 }
