@@ -1,8 +1,10 @@
 const {sanitize} = require('./sanitize');
 
 const RESPONSE_STATUS = {
+    SUCCESS: 'success',
     OK: 'ok',
-    FAIL: 'fail'
+    FAIL: 'fail',
+    ERROR: 'error',
 };
 
 const  DELTA_ACTION = {
@@ -10,21 +12,32 @@ const  DELTA_ACTION = {
     OVERRIDE: 'override',
 }
 
+// const defaultResult = () => ({
+//     response: RESPONSE_STATUS.OK,
+//     code: null,
+//     message: null,
+//     inner_errors: null,
+//     modal: null,
+//     popup: null,
+//     screen: null,
+//     screen_data: null,
+//     filter_data: null,
+//     bad_attributes: null,
+//     data: {},
+//     delta_action: '',
+//     delta: {},
+//     instructions: undefined,
+// });
+
 const defaultResult = () => ({
-    response: RESPONSE_STATUS.OK,
-    code: null,
-    message: null,
-    inner_errors: null,
-    modal: null,
-    popup: null,
-    screen: null,
-    screen_data: null,
-    filter_data: null,
-    bad_attributes: null,
-    data: {},
-    delta_action: '',
-    delta: {},
-    instructions: undefined,
+    status: RESPONSE_STATUS.OK,
+    usermessage: '',
+    logmessage: '',
+    requestingUser: 'Svetlichny-SV@saspw',
+    requestingPerson: 'Svetlichnyy Sam',
+    executingPid: 1234,
+    sasDatetime: 1963591798.8,
+    data:{},
 });
 
 const defaultSimpleResult = () => ({
@@ -35,20 +48,14 @@ const defaultSimpleResult = () => ({
 
 const createResponse = ({
                             id,
-                            response,
-                            code,
-                            message,
-                            inner_errors,
-                            modal,
-                            popup,
-                            screen,
-                            screen_data,
-                            filter_data,
-                            bad_attributes,
+                            status,
+                            usermessage,
+                            logmessage,
+                            requestingUser,
+                            requestingPerson,
+                            executingPid,
+                            sasDatetime,
                             data,
-                            delta_action,
-                            delta,
-                            instructions
                         }) => {
 
     const jsonrpc = '2.0';
@@ -56,42 +63,46 @@ const createResponse = ({
     const result = {
         ...defaultResult(),
         ...sanitize({
-            response,
-            code,
-            message,
-            inner_errors,
-            modal,
-            popup,
-            screen,
-            screen_data,
-            filter_data,
-            bad_attributes,
-            data,
-            delta_action,
-            delta,
-            instructions
+            status,
+            usermessage,
+            logmessage,
+            requestingUser,
+            requestingPerson,
+            executingPid,
+            sasDatetime,
+            data
         })
     };
 
     return {id, jsonrpc, result};
 }
 
+// const createErrorResponse = (
+//     id,
+//     code,
+//     message,
+//     modal,
+// ) => {
+//     const response = RESPONSE_STATUS.FAIL;
+//     const delta = {};
+//     const data = {};
+//     const delta_action = DELTA_ACTION.MERGE;
+//     const bad_attributes = null;
+//     return createResponse({
+//         id, response, code, message, modal, bad_attributes, data, delta, delta_action
+//     });
+// }
+
 const createErrorResponse = (
     id,
-    code,
-    message,
-    modal,
+    usermessage,
+    logmessage,
 ) => {
-    const response = RESPONSE_STATUS.FAIL;
-    const delta = {};
-    const data = {};
-    const delta_action = DELTA_ACTION.MERGE;
-    const bad_attributes = null;
+    const status = RESPONSE_STATUS.FAIL;
     return createResponse({
-        id, response, code, message, modal, bad_attributes, data, delta, delta_action
+        id, status, usermessage, logmessage,
     });
 }
-
 module.exports = {
     createResponse,
     createErrorResponse,

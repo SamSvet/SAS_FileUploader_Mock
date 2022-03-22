@@ -1,5 +1,3 @@
-
-
 const {v4} = require("uuid");
 const {sanitize} = require('../../share/sanitize');
 const {CAMPAIGN_STATUS} = require('../../share/constants');
