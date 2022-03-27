@@ -2,7 +2,7 @@ const { REF_CODES } = require("../share/constants");
 const { CONDITIONS, conditions } = require("../data/refbooks/conditions");
 const { PROCESS_RULES, process_rules } = require("../data/refbooks/process-rule");
 const { RULE_COLUMNS, rule_columns } = require("../data/refbooks/rule-column");
-const { TARGETS, targets } = require("../data/refbooks/target");
+const { TARGETS, targets } = require("../data/refbooks/targets");
 
 const searchByRrefbooks = (ref_code, substring) => {
   let refbook;

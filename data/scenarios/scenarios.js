@@ -1,5 +1,3 @@
-
-
 const {createScenario} = require("./scenarios-structure");
 const {CAMPAIGN_STATUSES} = require("../refbooks/campaign-statuses");
 const {MODEL_NAMES} = require("../refbooks/model-names");

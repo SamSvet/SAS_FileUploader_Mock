@@ -2,6 +2,7 @@ const PATHS = {
     CAMPAIGNS: "/api/campaigns",
     DICTIONARIES: "/api/dictionaries",
     TAGS: "/api/tags",
+    SAS_UPLOADER: "/api/sas/uploader"
   };
   
   const SCREENS = {
@@ -43,6 +44,7 @@ const PATHS = {
     PROCESS_RULE: "process_rule",
     RULE_COLUMN: "rule_column",
     TARGET: "target",
+    TARGET_COLUMN: "target_column",
   };
   
   const ERROR_CODES = {
