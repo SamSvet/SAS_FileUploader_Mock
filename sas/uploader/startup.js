@@ -1,9 +1,6 @@
-const { CONDITIONS } = require("../../data/refbooks/conditions");
-const { PROCESS_RULES } = require("../../data/refbooks/process-rule");
-const { RULE_COLUMNS } = require("../../data/refbooks/rule-column");
 const { targets } = require("../../data/refbooks/targets");
 const { target_columns } = require("../../data/refbooks/target-column");
-const { getErrorModal, ERROR_CODES, SCREENS, REF_CODES } = require("../../share/constants");
+const { getErrorModal, REF_CODES, ERROR_CODES } = require("../../share/constants");
 const {
   createErrorResponse,
   createResponse,

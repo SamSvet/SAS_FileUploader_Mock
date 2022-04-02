@@ -1,5 +1,3 @@
-
-
 const {createCampaign} = require("./campaign-structure");
 const {getRandomItem} = require("../../share/get-random-items-from-array");
 const { randomDate, randomInteger } = require("../../share/utils");

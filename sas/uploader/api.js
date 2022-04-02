@@ -1,3 +1,5 @@
+const startup = require("./startup");
+const selectChecks = require("./selectChecks");
 const {PATHS} = require("../../share/constants");
 
 const respond = (req, resp) => {
@@ -16,6 +18,9 @@ const respond = (req, resp) => {
             break;
         case 'download':
             download.respond(req, resp);
+            break;
+        case 'upload':
+            upload.respond(req, resp);
             break;
         default:
             break;
