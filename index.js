@@ -6,6 +6,7 @@ const DICT_API = require("./directories-api/api")
 const {ERROR_CODES, getErrorModal} = require("./share/constants");
 const { createErrorResponse } = require("./share/response");
 const {CONDITIONS, conditions} = require("./data/refbooks/conditions")
+const {fileMiddleware} = require("./middleware/file-middleware");
 const PORT = process.env.PORT || 3100;
 const app = express()
 
@@ -18,6 +19,8 @@ app.use(
 app.use(express.json());
 
 app.use(multer().array("resource"));
+
+app.use(fileMiddleware);
 
 // app.post(SAS_API.path, (req, res) => SAS_API.respond(req, res));
 app.get(`${DICT_API.path}/:refBook`, (req, res) => {

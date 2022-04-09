@@ -9,6 +9,9 @@ const {
   createResponse,
   DELTA_ACTION,
 } = require("../../share/response");
+const { CHECK_RESULT } = require("../../data/check_result/check_result-list");
+
+const checkResult = CHECK_RESULT;
 
 const checkData = (id, params) => {
     const { process_cd } = params;
@@ -17,6 +20,10 @@ const checkData = (id, params) => {
         return createErrorResponse(id, code, message, modal);
     }
     
+    const data = {
+      checkResult: checkResult
+    };
+
     const delta_action = DELTA_ACTION.OVERRIDE;
     return createResponse({
       id,
@@ -24,6 +31,7 @@ const checkData = (id, params) => {
       delta_action
     });
 }
+
 const respond = (req, resp) => {
     const { id, params } = req.body;
     const responseBody = checkData(id, params);

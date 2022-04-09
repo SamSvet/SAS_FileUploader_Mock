@@ -31,8 +31,8 @@ const  DELTA_ACTION = {
 
 const defaultResult = () => ({
     status: RESPONSE_STATUS.OK,
-    usermessage: '',
-    logmessage: '',
+    usermessage: 'This is mock usermessage',
+    logmessage: 'This is mock logmessage',
     requestingUser: 'Svetlichny-SV@saspw',
     requestingPerson: 'Svetlichnyy Sam',
     executingPid: 1234,
@@ -41,7 +41,7 @@ const defaultResult = () => ({
 });
 
 const defaultSimpleResult = () => ({
-    response: RESPONSE_STATUS.OK,
+    response: RESPONSE_STATUS.SUCCESS,
     data: {},
 });
 

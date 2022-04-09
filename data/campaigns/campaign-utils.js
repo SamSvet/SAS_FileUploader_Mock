@@ -1,5 +1,3 @@
-
-
 const { SCENARIOS } = require("../scenarios/scenarios");
 const { REF_CODES } = require("../../share/constants");
 const { ACTIVITY_TYPES } = require("../refbooks/activity-types");

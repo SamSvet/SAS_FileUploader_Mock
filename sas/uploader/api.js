@@ -1,5 +1,6 @@
 const startup = require("./startup");
 const selectChecks = require("./selectChecks");
+const checkData = require("./checkData");
 const {PATHS} = require("../../share/constants");
 
 const respond = (req, resp) => {
@@ -13,6 +14,7 @@ const respond = (req, resp) => {
             break;
         case 'checkData':
             checkData.respond(req, resp);
+            break;
         case 'loadData':
             loadData.respond(req, resp);
             break;
