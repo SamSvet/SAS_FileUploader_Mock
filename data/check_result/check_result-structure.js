@@ -13,7 +13,7 @@ const createCheckResult = ({
     desc,
     tablename,
 }) => ({
-    ...defaultCampaign(),
+    ...defaultCheckResult(),
     ...sanitize({
         rc,
         cnt,

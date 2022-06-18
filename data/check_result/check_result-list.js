@@ -5,7 +5,6 @@ const fillRandomFields = () => ({
     cnt: randomInteger(1, 100), 
 });
 
-
 const baseList = [{rc:0, desc:'Success',}, {rc:1, desc:'Error',}, {rc:-1, desc:'Warning',}]
 const checkResultList = baseList.map((x, i) => ({
     ...x, ...fillRandomFields()

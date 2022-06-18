@@ -30,7 +30,7 @@ const  DELTA_ACTION = {
 // });
 
 const defaultResult = () => ({
-    status: RESPONSE_STATUS.OK,
+    status: RESPONSE_STATUS.SUCCESS,
     usermessage: 'This is mock usermessage',
     logmessage: 'This is mock logmessage',
     requestingUser: 'Svetlichny-SV@saspw',
@@ -47,7 +47,6 @@ const defaultSimpleResult = () => ({
 
 
 const createResponse = ({
-                            id,
                             status,
                             usermessage,
                             logmessage,
@@ -74,7 +73,7 @@ const createResponse = ({
         })
     };
 
-    return {id, jsonrpc, result};
+    return {jsonrpc, ...result};
 }
 
 // const createErrorResponse = (

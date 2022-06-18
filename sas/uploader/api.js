@@ -4,12 +4,12 @@ const checkData = require("./checkData");
 const {PATHS} = require("../../share/constants");
 
 const respond = (req, resp) => {
-    const {method} = req.body;
-    switch (method) {
-        case 'startup':
+    const {_program} = req.body;
+    switch (_program) {
+        case '/Apps/SASFileUploader/startupService':
             startup.respond(req, resp);
             break;
-        case 'selectChecks':
+        case '/Apps/SASFileUploader/selectChecks':
             selectChecks.respond(req, resp);
             break;
         case 'checkData':
@@ -21,7 +21,7 @@ const respond = (req, resp) => {
         case 'download':
             download.respond(req, resp);
             break;
-        case 'upload':
+        case '/Apps/SASFileUploader/uploadService':
             upload.respond(req, resp);
             break;
         default:

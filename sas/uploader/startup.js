@@ -7,7 +7,7 @@ const {
   DELTA_ACTION,
 } = require("../../share/response");
 
-const startupResponse = (id, params) => {
+const startupResponse = (_debug, _service) => {
   // const { requestingUser } = params;
   // if (!requestingUser) {
   //   const { code, modal, message } = getErrorModal(ERROR_CODES.NOT_FOUND);
@@ -22,20 +22,20 @@ const startupResponse = (id, params) => {
   ),
   }
 
-  const data = {
-    targets,
-    ...dictionaries,
-  };
+  // const data = {
+  //   targets,
+  //   ...dictionaries,
+  // };
+
   const delta_action = DELTA_ACTION.OVERRIDE;
   return createResponse({
-    id,
-    data,
+    data:[...targets],
     delta_action
   });
 }
 const respond = (req, resp) => {
-  const { id, params } = req.body;
-  const responseBody = startupResponse(id, params);
+  const { _debug, _service } = req.body;
+  const responseBody = startupResponse(_debug, _service);
   resp.json(responseBody);
 };
 

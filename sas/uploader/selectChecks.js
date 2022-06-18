@@ -46,9 +46,9 @@ const selectChecks = (id, params) => {
 }
 
 const respond = (req, resp) => {
-    const { id, params } = req.body;
-    const responseBody = selectChecks(id, params);
-    resp.json(responseBody);
+  const { id, params } = req.body;
+  const responseBody = selectChecks(id, params);
+  resp.json(responseBody);
 };
   
   module.exports = {

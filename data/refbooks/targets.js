@@ -2,22 +2,18 @@ const {createRefbookItem} = require("./refbook-item-structure")
 
 const targets = [
     {
-        process_cd: 'sashelp_shoes',
-        process_name: 'shoes list',
-        target_table: 'SASHELP.SHOES',
-        target_table_dyn: '',
-        check_stp: '/Apps/SASUploader/checkData',
-        load_stp: '/Apps/SASUploader/loadData',
-        select_checks_stp: '/Apps/SASUploader/selectChecks',
+        VALUE: 'sashelp_shoes',
+        LABEL: 'shoes list',
+        CHECK_STP: '/Apps/SASUploader/checkData',
+        LOAD_STP: '/Apps/SASUploader/loadData',
+        SELECT_CHECKS_STP: '/Apps/SASUploader/selectChecks',
     },
     {
-        process_cd: 'sashelp_class',
-        process_name: 'class list',
-        target_table: 'SASHELP.CLASS',
-        target_table_dyn: '',
-        check_stp: '/Apps/SASUploader/checkData',
-        load_stp: '/Apps/SASUploader/loadData',
-        select_checks_stp: '/Apps/SASUploader/selectChecks',
+        VALUE: 'sashelp_class',
+        LABEL: 'class list',
+        CHECK_STP: '/Apps/SASUploader/checkData',
+        LOAD_STP: '/Apps/SASUploader/loadData',
+        SELECT_CHECKS_STP: '/Apps/SASUploader/selectChecks',
     }
 ];
 

@@ -2,7 +2,7 @@ const PATHS = {
     CAMPAIGNS: "/api/campaigns",
     DICTIONARIES: "/api/dictionaries",
     TAGS: "/api/tags",
-    SAS_UPLOADER: "/api/sas/uploader"
+    SAS_UPLOADER: "/SASStoredProcess/do"
   };
   
   const SCREENS = {
